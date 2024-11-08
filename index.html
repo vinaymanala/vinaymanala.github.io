@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>
-      About Vinay Manala - Blogging About Life Skills &amp; Programming
-    </title>
+    <title>Vinay Manala - Blogging About Life Skills &amp; Programming</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -50,7 +48,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
       rel="stylesheet"
     />
-    <script src="./main.js" defer></script>
+    <script type="text/javascript" src="main.js" defer></script>
   </head>
   <body>
     <!-- header menu -->
@@ -58,14 +56,28 @@
       <header>
         <nav>
           <div>
-            <a href="">Profile</a>
+            <a class="profile-link-home" href="index.html"
+              ><img
+                class="profile"
+                src="./assets//picture_from_bhimasankar_waterfall.jpg"
+                width="50"
+                height="50"
+            /></a>
             <ul>
               <li><a href="">Blogs</a></li>
               <li><a href="">Shorts</a></li>
-              <li><a href="">About</a></li>
+              <li><a href="about.html">About</a></li>
             </ul>
           </div>
-          <input type="checkbox" />
+          <!-- Toggle switch structure -->
+          <label for="darkmode-toggle" class="switch darkmode-toggle">
+            <input
+              name="switch darkmode-toggle"
+              type="checkbox"
+              id="darkmode-toggle"
+            />
+            <span class="slider"></span>
+          </label>
         </nav>
       </header>
       <!-- main setion -->
@@ -74,7 +86,43 @@
           <!-- Blogs view -->
           <div class="blogs-view">Blogs</div>
           <!-- About view -->
-          <div class="about-view">About</div>
+          <div class="about-view">
+            <img
+              class="profile about-profile"
+              src="./assets//picture_from_bhimasankar_waterfall.jpg"
+              width="145"
+              height="150"
+            />
+            <!-- About description -->
+            <div class="about-description">
+              <p>
+                "Hi, I&rsquo;m Vinay Manala. I currently live in the Mumbai
+                Metropolitan Area of Maharashtra with my parents. I have started
+                programming when I took electronics as my engineering path.
+                Since then I have been building projects and learning new
+                technologies. "
+              </p>
+              <label for="about-experience">Experience:</label>
+              <div class="about-experience">
+                <p>Software Developer (+1yrs)</p>
+                <p>Frontend Developer (+2yrs)</p>
+              </div>
+              <label for="about-skills">Programming:</label>
+              <p id="about-skills" class="about-skills">
+                Javascript,Typescript, SQL
+              </p>
+              <label class="about-links-title">Find me at:</label>
+              <div class="about-me-links">
+                <a href="https://github.com/manalavi">Github</a>
+                <a href="https://www.linkedin.com/in/vinaymanala/">LinkedIn</a>
+                <a href="https://twitter.com/vinaymanala/">Twitter</a>
+                <a
+                  href="https://www.youtube.com/channel/UCXs7GazVR7nHPTJGAcAm3fg"
+                  >Youtube</a
+                >
+              </div>
+            </div>
+          </div>
           <!-- Shorts view -->
           <div class="shorts-view">Shorts</div>
         </div>
