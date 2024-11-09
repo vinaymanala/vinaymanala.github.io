@@ -1,1 +1,0 @@
-# vinaymanala.github.io
