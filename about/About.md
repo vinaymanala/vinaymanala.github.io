@@ -1,5 +1,3 @@
-# About me
-
 ## Hi, I'm Vinay,
 
 I currently live in the Mumbai Metropolitan Area of Maharashtra with

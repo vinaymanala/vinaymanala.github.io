@@ -77,7 +77,12 @@
               <li><a href="../blogs">Blogs</a></li>
               <li><a href="../shorts">Shorts</a></li>
               <li>
-                <a href="./about" style="color: var(--link-hover-color)"
+                <a
+                  href="."
+                  style="
+                    color: var(--link-hover-color);
+                    background-color: var(--link-background-color);
+                  "
                   >About</a
                 >
               </li>
@@ -96,43 +101,54 @@
       </header>
       <!-- main setion -->
       <main>
-        <article>
-          <zero-md src="About.md">
-            <template data-append>
-              <style>
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                p,
-                label,
-                span {
-                  color: var(--primary);
-                }
-                a {
-                  color: var(--link-color);
-                }
+        <section>
+          <h1 style="font-size: 1.6rem">About me</h1>
+          <article>
+            <zero-md src="About.md">
+              <template data-append>
+                <style>
+                  h1,
+                  h2,
+                  h3,
+                  h4,
+                  h5,
+                  p,
+                  label,
+                  span {
+                    color: var(--primary);
+                  }
+                  a {
+                    color: var(--link-color);
+                  }
 
-                a:hover {
-                  color: var(--link-hover-color);
-                  background-color: var(--link-background-color);
-                  text-decoration-color: var(--link-hover-underline-color);
-                }
-                h3,
-                h5 {
-                  margin: 1.5em auto;
-                }
-                p {
-                  margin-top: -0.5em;
-                }
-              </style>
-            </template>
-          </zero-md>
-        </article>
+                  a:hover {
+                    color: var(--link-hover-color);
+                    background-color: var(--link-background-color);
+                    text-decoration-color: var(--link-hover-underline-color);
+                  }
+                  h3,
+                  h5 {
+                    margin: 1.5em auto;
+                  }
+                  p {
+                    margin-top: -0.5em;
+                  }
+                </style>
+              </template>
+            </zero-md>
+          </article>
+        </section>
       </main>
-      <footer>Footer</footer>
       <!-- footer menu -->
+      <footer>
+        <p>
+          © 2024
+          <a href="https://vinaymanala.github.io">Vinay Manala</a>
+          <a href="https://github.com/vinaymanala">Github</a>
+          -
+          <a href="https://twitter.com/vinaymanala">Twitter</a>
+        </p>
+      </footer>
     </div>
   </body>
 </html>
