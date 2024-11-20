@@ -1,4 +1,5 @@
 (() => {
+  // dark theme settings
   (function () {
     const themeToggle = document.querySelector(".darkmode-toggle input");
     const light = "light";
@@ -26,6 +27,8 @@
       }
     });
   })();
+
+  // blogs list creation
   async function createBlogsList(blogs, rootFilePath) {
     const list = [];
     for (let blog of blogs) {
@@ -39,6 +42,17 @@
     return list;
   }
 
+  // format Date
+  function getDate(date) {
+    const options = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+    return new Date(date).toLocaleDateString("en-US", options);
+  }
+
+  // blog content creation
   function createBlogContent(blog) {
     const blogDivTag = document.createElement("div");
     const innerDivTag = document.createElement("div");
@@ -51,8 +65,8 @@
 
     titleH1Tag.textContent = blog.title;
     descriptionPTag.textContent = blog.description + "...";
+    dateTextTag.textContent = getDate(blog.date);
     urlTag.href = blog.url;
-    dateTextTag.textContent = blog.date;
     tagsTextTag.textContent = blog.tags.map((t) => "#" + t.tag).join("");
     urlTag.appendChild(titleH1Tag);
     innerDivTag.appendChild(urlTag);
@@ -65,11 +79,24 @@
     return blogDivTag.innerHTML;
   }
 
+  // fetch blogs
   async function fetchBlogs(url) {
     const res = await fetch(url);
     const { blogs } = await res.json();
     return blogs;
   }
+
+  // render blog articles in blogs section
+  (async function () {
+    const blogArticles = document.querySelector(".blogs-articles");
+    const blogs = blogArticles && (await fetchBlogs((url = "./blogs.json")));
+    const blogsList = await createBlogsList(blogs, (rootFilePath = "."));
+    for (let blog of blogsList) {
+      blogArticles.innerHTML += createBlogContent(blog);
+    }
+  })();
+
+  // render blogs and short section
   (async function () {
     const blogsElement = document.querySelector(".blogs-view");
     const shortsElement = document.querySelector(".shorts-view");
@@ -109,14 +136,5 @@
         shortsIterator = iterator(shortsList);
       }
     }, 1600);
-  })();
-
-  (async function () {
-    const blogArticles = document.querySelector(".blogs-articles");
-    const blogs = blogArticles && (await fetchBlogs((url = "./blogs.json")));
-    const blogsList = await createBlogsList(blogs, (rootFilePath = "."));
-    for (let blog of blogsList) {
-      blogArticles.innerHTML += createBlogContent(blog);
-    }
   })();
 })();

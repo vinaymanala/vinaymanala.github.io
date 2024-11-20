@@ -296,10 +296,16 @@ footer {
   margin: 2em auto;
 }
 
+.blogs-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .blogs-articles > div {
   border: 1px solid var(--border);
   border-radius: 2%;
-  padding: 1rem;
+  padding: 0.7rem;
   background-color: var(--entry);
 }
 
@@ -319,6 +325,9 @@ footer {
 
 /* media query */
 @media (max-width: 768px) {
+  main {
+    margin-top: 0;
+  }
   .main-section {
     display: grid;
     grid-template-columns: repeat(100px, auto);
@@ -327,7 +336,9 @@ footer {
     height: 100%;
     margin: 5% auto;
   }
-
+  section {
+    margin: 0.5rem;
+  }
   article {
     margin: auto;
   }
@@ -354,6 +365,10 @@ footer {
     grid-column: span 3;
     grid-row: 3;
     padding: 1rem;
+  }
+
+  .blogs-articles > div {
+    font-size: small;
   }
 
   footer {

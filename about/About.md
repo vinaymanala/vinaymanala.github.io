@@ -1,3 +1,5 @@
+## About me
+
 ## Hi, I'm Vinay,
 
 I currently live in the Mumbai Metropolitan Area of Maharashtra with
@@ -47,7 +49,7 @@ report and address it to the developers community experiences.
 "Disaster Delineation App" is a software tool to analyze the
 real time disaster events occuring from around the world.
 
-## Some of the websites I have build:
+## Some of the projects I have build:
 
 #### [Movies website (bookyMyMovies)](https://bmym.netlify.app/)
 

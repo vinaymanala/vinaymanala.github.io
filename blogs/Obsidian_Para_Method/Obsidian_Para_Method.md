@@ -2,7 +2,9 @@
 
 ##### Date : November 16, 2024 | [#Productivity]()
 
-I was awful at managing notes of my own. Even when I wanted to look back on a specific topic in my notes, it was a hassle. My notes were unorganised and was hard to maintain. Taking notes in books is easy, but still its difficult to index when you have notes in no of books. Since most of my work I do is online nowadays, I needed a efficient note taking application which can handle all of my troubles in a single application.
+I was awful at managing notes of my own. Even when I wanted to look back on a specific topic in my notes, it was a hassle. My notes were unorganised and was hard to maintain.
+
+Taking notes in books is easy, but still its difficult to index when you have notes in no of books. Since most of my work I do is online nowadays, I needed a efficient note taking application which can handle all of my troubles in a single application.
 
 ## Obsidian
 

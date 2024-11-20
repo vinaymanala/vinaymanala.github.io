@@ -102,8 +102,40 @@
       <!-- main setion -->
       <main>
         <section>
-          <h1 style="font-size: 1.6rem">Shorts</h1>
-          <article></article>
+          <article>
+            <zero-md src="Shorts.md">
+              <template data-append>
+                <style>
+                  h1,
+                  h2,
+                  h3,
+                  h4,
+                  h5,
+                  p,
+                  label,
+                  span {
+                    color: var(--primary);
+                  }
+                  a {
+                    color: var(--link-color);
+                  }
+
+                  a:hover {
+                    color: var(--link-hover-color);
+                    background-color: var(--link-background-color);
+                    text-decoration-color: var(--link-hover-underline-color);
+                  }
+                  h3,
+                  h5 {
+                    margin: 1.5em auto;
+                  }
+                  p {
+                    margin-top: -0.5em;
+                  }
+                </style>
+              </template>
+            </zero-md>
+          </article>
         </section>
       </main>
       <!-- footer menu -->
