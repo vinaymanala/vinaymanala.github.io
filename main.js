@@ -28,17 +28,18 @@
     });
   })();
 
-  // blogs list creation
-  async function createBlogsList(blogs, rootFilePath) {
+  // blogs and shorts list creation
+  async function createContentList(article, rootFilePath) {
     const list = [];
-    for (let blog of blogs) {
-      const res = await fetch(rootFilePath + blog.file);
+    for (let a of article) {
+      const res = await fetch(rootFilePath + a.file);
       const text = (await res.text()).split("\n");
       const description =
         text.slice(1, 2).join("\n") + text.slice(3, 5).join("\n");
-      const blogList = { ...blog, url: rootFilePath + blog.url, description };
-      list.push(blogList);
+      const articlesList = { ...a, url: rootFilePath + a.url, description };
+      list.push(articlesList);
     }
+    console.log(list);
     return list;
   }
 
@@ -53,8 +54,8 @@
   }
 
   // blog content creation
-  function createBlogContent(blog) {
-    const blogDivTag = document.createElement("div");
+  function createContent(article) {
+    const divTag = document.createElement("div");
     const innerDivTag = document.createElement("div");
     const urlTag = document.createElement("a");
     const urlInnerTag = document.createElement("a");
@@ -63,11 +64,11 @@
     const dateTextTag = document.createElement("span");
     const tagsTextTag = document.createElement("span");
 
-    titleH1Tag.textContent = blog.title;
-    descriptionPTag.textContent = blog.description + "...";
-    dateTextTag.textContent = getDate(blog.date);
-    urlTag.href = blog.url;
-    tagsTextTag.textContent = blog.tags.map((t) => "#" + t.tag).join("");
+    titleH1Tag.textContent = article.title;
+    descriptionPTag.textContent = article.description + "...";
+    dateTextTag.textContent = getDate(article.date);
+    urlTag.href = article.url;
+    tagsTextTag.textContent = article.tags.map((t) => "#" + t.tag).join("");
     urlTag.appendChild(titleH1Tag);
     innerDivTag.appendChild(urlTag);
     innerDivTag.appendChild(descriptionPTag);
@@ -75,8 +76,8 @@
     innerDivTag.appendChild(dateTextTag);
     innerDivTag.appendChild(tagsTextTag);
 
-    blogDivTag.appendChild(innerDivTag);
-    return blogDivTag.innerHTML;
+    divTag.appendChild(innerDivTag);
+    return divTag.innerHTML;
   }
 
   // fetch blogs
@@ -85,14 +86,30 @@
     const { blogs } = await res.json();
     return blogs;
   }
+  // fetch shorts
+  async function fetchShorts(url) {
+    const res = await fetch(url);
+    const { shorts } = await res.json();
+    return shorts;
+  }
 
-  // render blog articles in blogs section
+  // render blog  articles in blogs section
   (async function () {
     const blogArticles = document.querySelector(".blogs-articles");
     const blogs = blogArticles && (await fetchBlogs((url = "./blogs.json")));
-    const blogsList = await createBlogsList(blogs, (rootFilePath = "."));
+    const blogsList = await createContentList(blogs, (rootFilePath = "."));
     for (let blog of blogsList) {
-      blogArticles.innerHTML += createBlogContent(blog);
+      blogArticles.innerHTML += createContent(blog);
+    }
+  })();
+  // render short articles in shorts section
+  (async function () {
+    const shortArticles = document.querySelector(".shorts-articles");
+    const shorts =
+      shortArticles && (await fetchShorts((url = "./shorts.json")));
+    const shortsList = await createContentList(shorts, (rootFilePath = "."));
+    for (let short of shortsList) {
+      shortArticles.innerHTML += createContent(short);
     }
   })();
 
@@ -103,9 +120,17 @@
 
     const blogs =
       blogsElement && (await fetchBlogs((url = "./blogs/blogs.json")));
-    const blogsList = await createBlogsList(blogs, (rootFilePath = "./blogs"));
+    const blogsList = await createContentList(
+      blogs,
+      (rootFilePath = "./blogs")
+    );
 
-    const shortsList = [];
+    const shorts =
+      shortsElement && (await fetchShorts((url = "./shorts/shorts.json")));
+    const shortsList = await createContentList(
+      shorts,
+      (rootFilePath = "./shorts")
+    );
     // Array.from({ length: 5 }, (_, i) => i + 1);
     function* iterator(items) {
       for (let item of items) {
@@ -116,25 +141,24 @@
     let blogsIterator = iterator(blogsList);
     let shortsIterator = iterator(shortsList);
 
-    setInterval(async () => {
-      const currentBlog = blogsIterator.next();
-      if (!currentBlog.done) {
-        const blog = currentBlog.value;
+    // setInterval(async () => {
+    const currentBlog = blogsIterator.next();
+    if (!currentBlog.done) {
+      const blog = currentBlog.value;
+      blogsElement.innerHTML = createContent(blog);
+    } else {
+      blogsIterator = iterator(blogsList);
+    }
+    // }, 20000);
 
-        blogsElement.innerHTML = createBlogContent(blog);
-      } else {
-        blogsIterator = iterator(blogsList);
-      }
-    }, 2000);
-
-    setInterval(() => {
-      const currentShort = shortsIterator.next();
-      if (!currentShort.done) {
-        const short = currentShort.value;
-        shortsElement.innerHTML = short;
-      } else {
-        shortsIterator = iterator(shortsList);
-      }
-    }, 1600);
+    // setInterval(() => {
+    const currentShort = shortsIterator.next();
+    if (!currentShort.done) {
+      const short = currentShort.value;
+      shortsElement.innerHTML = createContent(short);
+    } else {
+      shortsIterator = iterator(shortsList);
+    }
+    // }, 16000);
   })();
 })();

@@ -42,7 +42,7 @@
     />
     <link rel="canonical" href="https://www.vinaymanala.github.io/about/" />
     <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="../index.css" />
+    <link rel="stylesheet" href="../../index.css" />
 
     <!-- Add google analytics here -->
 
@@ -50,7 +50,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap"
       rel="stylesheet"
     />
-    <script type="text/javascript" src="../main.js" defer></script>
+    <script type="text/javascript" src="../../main.js" defer></script>
     <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
     <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
 
@@ -69,23 +69,16 @@
             <a class="profile-link-home" href="/"
               ><img
                 class="profile"
-                src="../assets//picture_from_bhimasankar_waterfall.jpg"
+                src="../../assets//picture_from_bhimasankar_waterfall.jpg"
                 width="50"
                 height="50"
             /></a>
             <ul>
-              <li><a href="../blogs/">Blogs</a></li>
+              <li><a href="../../blogs">Blogs</a></li>
+              <li><a href="../../shorts">Shorts</a></li>
               <li>
-                <a
-                  href="."
-                  style="
-                    color: var(--link-hover-color);
-                    background-color: var(--link-background-color);
-                  "
-                  >Shorts</a
-                >
+                <a href="../../about/">About</a>
               </li>
-              <li><a href="../about">About</a></li>
             </ul>
           </div>
           <!-- Toggle switch structure -->
@@ -102,8 +95,56 @@
       <!-- main setion -->
       <main>
         <section>
-          <h2>Shorts</h2>
-          <article class="shorts-articles"></article>
+          <article>
+            <zero-md src="Run_A_Postgres_Docker_Container.md">
+              <template data-append>
+                <style>
+                  * {
+                    color: var(--primary);
+                  }
+                  a {
+                    color: var(--link-color);
+                  }
+
+                  a:hover {
+                    color: var(--link-hover-color);
+                    background-color: var(--link-background-color);
+                    text-decoration-color: var(--link-hover-underline-color);
+                  }
+                  h3,
+                  h5 {
+                    margin: 2.5em auto;
+                    opacity: 0.8;
+                  }
+                  p {
+                    margin-top: -0.5em;
+                  }
+                  img {
+                    width: 100%;
+                  }
+                  blockquote {
+                    margin: 20px 0;
+                    padding: 0 14px;
+                    border-inline-start: 3px solid var(--tertiary-bg);
+                    opacity: 0.8;
+                  }
+                  code {
+                    font-size: 1.6em;
+                    /* baccolor: var(--link-hover-color); */
+                    border: 2px solid var(--border);
+                    padding: 0.4em;
+                  }
+
+                  @media (max-width: 1086px) {
+                    code {
+                      display: block;
+                      text-wrap: wrap;
+                    }
+                  }
+                </style>
+              </template>
+            </zero-md>
+          </article>
         </section>
       </main>
       <!-- footer menu -->

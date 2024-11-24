@@ -180,24 +180,28 @@ a:hover {
   grid-row: 1;
   display: grid;
   place-items: center;
-  /* font-size: x-large; */
 }
 
-.blogs-view > div {
+.blogs-view > div,
+.shorts-view > div {
   margin: calc(10px - 100%) 5%;
 }
 
-.blogs-view > div > a > h3 {
+.blogs-view > div > a > h3,
+.shorts-view > div > a > h3 {
   font-size: 1.3em;
 }
 
 .blogs-view > div > p,
-.blogs-view > div > span {
+.blogs-view > div > span,
+.shorts-view > div > p,
+.shorts-view > div > span {
   opacity: 0.8;
   margin: 1em 0.3em;
 }
 
-.blogs-view > div > span {
+.blogs-view > div > span,
+.shorts-view > div > span {
   font-size: 0.8em;
 }
 
@@ -218,7 +222,6 @@ footer {
   grid-row: 2;
   display: grid;
   place-items: center;
-  font-size: x-large;
 }
 
 .about-view {
@@ -296,30 +299,36 @@ footer {
   margin: 2em auto;
 }
 
-.blogs-articles {
+.blogs-articles,
+.shorts-articles {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.blogs-articles > div {
+.blogs-articles > div,
+.shorts-articles > div {
   border: 1px solid var(--border);
   border-radius: 2%;
   padding: 0.7rem;
   background-color: var(--entry);
 }
 
-.blogs-articles > div > a > h3 {
+.blogs-articles > div > a > h3,
+.shorts-articles > div > a > h3 {
   font-size: 1.3em;
 }
 
 .blogs-articles > div > p,
-.blogs-articles > div > span {
+.blogs-articles > div > span,
+.shorts-articles > div > p,
+.shorts-articles > div > span {
   opacity: 0.8;
   margin: 1em 0.3em;
 }
 
-.blogs-articles > div > span {
+.blogs-articles > div > span,
+.shorts-articles > div > span {
   font-size: 0.8em;
 }
 
@@ -349,14 +358,15 @@ footer {
     grid-row: 1;
   }
 
-  .blogs-view > div {
-    margin: 0 5%;
-  }
-
   .shorts-view {
     border: 1px solid var(--border);
     grid-column: span 3;
     grid-row: 2;
+  }
+
+  .blogs-view > div,
+  .shorts-view > div {
+    margin: 0 5%;
   }
 
   .about-view {
