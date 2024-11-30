@@ -31,6 +31,10 @@ which you think can be of help to you later. This process can store your random 
 
 ## What you can do ?
 
-The PARA method has and is helping me to take notes regularly and it is improving my learning by taking notes. While using Obsidian you can only store your files locally. However there is a subscription plan where you can sync your notes across devices and even publish your notes. I have a hacked process for syncing notes across devices using obsidian, let me know if you want to hear more about this.
+The PARA method is helping me to take notes regularly and it is improving my learning by taking notes. While using Obsidian you can only store your files locally. However there is a subscription plan where you can sync your notes across devices and even publish your notes. I have a hacked process for syncing notes across devices using obsidian, let me know if you want to hear more about this.
+
+You can take a look at my graph view which builds as I add my notes and link using PARA method. This graph view helps you visualize how your notes have been linked and find common topics notes to start building up on top of the those ideas.
+
+![obsidian_graph](../../assets/obsidian_graph.png)
 
 I highly recommend giving a try to [Obsidian](https://obsidian.md/)
