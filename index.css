@@ -149,11 +149,11 @@ a:hover {
 }
 
 .profile {
-  border: 2px solid white;
+  border: 2px solid var(--link-hover-underline-color);
   border-radius: 50%;
   object-fit: cover;
-  filter: brightness(90%);
-  filter: grayscale(100%);
+  /* filter: brightness(90%);
+  filter: grayscale(100%); */
 }
 
 .profile-link-home:hover {
