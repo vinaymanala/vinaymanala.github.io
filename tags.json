@@ -1,0 +1,21 @@
+{
+    "tags": [
+        {
+        "tag": "productivity",
+        "url": "/productivity"
+        },
+        {
+        "tag": "tech",
+        "url":"/tech"
+        },
+        {
+            "tag": "performance",
+            "url": "/performance"
+        },
+        {
+            "tag": "software-development",
+            "url": "/software-development"
+        }
+
+    ]
+}

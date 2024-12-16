@@ -8,7 +8,7 @@
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) &&
         window.matchMedia("(prefers-color-scheme: dark)").matches);
-    console.log(isDark);
+    // console.log(isDark);
     if (isDark) {
       document.documentElement.classList.add(dark);
       themeToggle.checked = true;
@@ -28,6 +28,33 @@
     });
   })();
 
+  // fetch tags in pages
+  (async function () {
+    let [Tags, Blogs, Shorts] = await Promise.all([
+      await fetch("./tags.json"),
+      await fetch("./blogs/blogs.json"),
+      await fetch("./shorts/shorts.json"),
+    ]);
+    const { tags } = await Tags.json();
+    const { blogs } = await Blogs.json();
+    const { shorts } = await Shorts.json();
+    tagsHtml = document.querySelector(".tags-view");
+    const divTag = document.createElement("div");
+    const ulTag = document.createElement("ul");
+    const fragment = document.createDocumentFragment();
+    tagsHtml.innerHTML = "";
+    tags.map(
+      (t) =>
+        (ulTag.innerHTML += `
+      <li>
+      <a href=${t.url}><h3>#${t.tag}</h3></a></li>`)
+    );
+
+    divTag.appendChild(ulTag);
+    fragment.appendChild(divTag);
+    tagsHtml.appendChild(fragment);
+  })();
+
   // blogs and shorts list creation
   async function createContentList(article, rootFilePath) {
     const list = [];
@@ -35,11 +62,11 @@
       const res = await fetch(rootFilePath + a.file);
       const text = (await res.text()).split("\n");
       const description =
-        text.slice(1, 2).join("\n") + text.slice(3, 5).join("\n");
+        text.slice(1, 2).join("\n") + text.slice(3, 7).join("\n");
       const articlesList = { ...a, url: rootFilePath + a.url, description };
       list.push(articlesList);
     }
-    console.log(list);
+    // console.log(list);
     return list;
   }
 
@@ -65,10 +92,11 @@
     const tagsTextTag = document.createElement("span");
 
     titleH1Tag.textContent = article.title;
-    descriptionPTag.textContent = article.description + "...";
+    descriptionPTag.innerHTML =
+      article.description + "... " + `<a href=${article.url}>Read more</a>`;
     dateTextTag.textContent = getDate(article.date);
     urlTag.href = article.url;
-    tagsTextTag.textContent = article.tags.map((t) => "#" + t.tag).join("");
+    tagsTextTag.textContent = article.tags.map((t) => "#" + t).join(" ");
     urlTag.appendChild(titleH1Tag);
     innerDivTag.appendChild(urlTag);
     innerDivTag.appendChild(descriptionPTag);

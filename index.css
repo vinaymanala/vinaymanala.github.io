@@ -177,16 +177,54 @@ a:hover {
   background-color: var(--entry);
   border: 1px solid var(--border);
   grid-column: span 2;
-  grid-row: 1;
+  grid-row: 1 / 3;
   display: grid;
   place-items: center;
+  position: relative;
+}
+
+.shorts-view {
+  background-color: var(--entry);
+  border: 1px solid var(--border);
+  grid-column: 2;
+  grid-row: 3 / 5;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.about-view {
+  background-color: var(--entry);
+  border: 1px solid var(--border);
+  grid-column: 3;
+  grid-row: 1 / 5;
+  /* display: grid; */
+  place-items: center;
+  position: relative;
+}
+
+.tags-view {
+  background-color: var(--entry);
+  border: 1px solid var(--border);
+  grid-column: 1;
+  grid-row: 3 / 5;
+  display: grid;
+  /* place-items: center; */
+  height: 100%;
+  position: relative;
 }
 
 .blogs-view > div,
-.shorts-view > div {
-  margin: calc(10px - 100%) 5%;
+.shorts-view > div,
+.tags-view > div {
+  margin: 5%;
+  position: absolute;
+  top: 0;
 }
 
+.tags-view > div > ul > li {
+  list-style: none;
+}
 .blogs-view > div > a > h3,
 .shorts-view > div > a > h3 {
   font-size: 1.3em;
@@ -215,27 +253,8 @@ footer {
   color: var(--primary);
 }
 
-.shorts-view {
-  background-color: var(--entry);
-  border: 1px solid var(--border);
-  grid-column: span 2;
-  grid-row: 2;
-  display: grid;
-  place-items: center;
-}
-
-.about-view {
-  background-color: var(--entry);
-  border: 1px solid var(--border);
-  grid-column: 3;
-  grid-row: 1 / 3;
-  place-items: center;
-  text-align: center;
-  height: 100%;
-}
-
 .about-profile {
-  margin-top: 1.5rem;
+  margin: 2rem auto;
 }
 
 .about-description {
@@ -356,24 +375,35 @@ footer {
     border: 1px solid var(--border);
     grid-column: span 3;
     grid-row: 1;
+    position: static;
   }
 
   .shorts-view {
     border: 1px solid var(--border);
     grid-column: span 3;
     grid-row: 2;
+    position: static;
   }
 
   .blogs-view > div,
-  .shorts-view > div {
+  .shorts-view > div,
+  .tags-view > div {
     margin: 0 5%;
+    position: static;
+  }
+
+  .tags-view {
+    border: 1px solid var(--border);
+    grid-column: span 3;
+    grid-row: 3;
+    position: static;
   }
 
   .about-view {
     border: 1px solid var(--border);
     height: fit-content;
     grid-column: span 3;
-    grid-row: 3;
+    grid-row: 4;
     padding: 1rem;
   }
 
