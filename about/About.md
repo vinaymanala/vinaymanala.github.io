@@ -55,7 +55,7 @@ real time disaster events occuring from around the world.
 
 A movies web application built using Reactjs library with public apis available.
 
-#### Project Idea Document creator uing AI (Rquid)
+#### Project Idea Document creator uing AI (Rquid)[https://rquid-client.onrender.com/]
 
 A project idea document creator using AI which creates projects within minutes.
 
