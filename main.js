@@ -211,10 +211,10 @@
         clearInterval(blogsIntervalId);
       }
 
-      let currentBlog = blogsIterator.next();
-      blogsElement.innerHTML = createContent(currentBlog.value);
-      blogsIntervalId = setInterval((currentBlog) => {
-        currentBlog = blogsIterator.next();
+      // let currentBlog = blogsIterator.next();
+      // blogsElement.innerHTML = createContent(currentBlog.value);
+      blogsIntervalId = setInterval(() => {
+        const currentBlog = blogsIterator.next();
         if (!currentBlog.done) {
           const blog = currentBlog.value;
           blogsElement.innerHTML = createContent(blog);
@@ -226,10 +226,10 @@
       if (shortsIntervalId) {
         clearInterval(shortsIntervalId);
       }
-      const currentShort = shortsIterator.next();
-      shortsElement.innerHTML = createContent(currentShort.value);
-      shortsIntervalId = setInterval((currentShort) => {
-        currentShort = shortsIterator.next();
+      // const currentShort = shortsIterator.next();
+      // shortsElement.innerHTML = await createContent(currentShort.value);
+      shortsIntervalId = setInterval(() => {
+        const currentShort = shortsIterator.next();
         if (!currentShort.done) {
           const short = currentShort.value;
           shortsElement.innerHTML = createContent(short);

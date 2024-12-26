@@ -483,6 +483,11 @@ slider.round:before {
 }
 
 /* Animation for each circle */
+
+.loader {
+  align-content: center;
+  height: 90%;
+}
 .loader circle {
   animation: pulse 1.5s infinite ease-in-out;
 }
