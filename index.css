@@ -103,6 +103,7 @@ span {
 header {
   margin-top: 0.5rem;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -236,6 +237,7 @@ a:hover {
 .shorts-view > div > span {
   opacity: 0.8;
   margin: 1em 0.3em;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .blogs-view > div > span,

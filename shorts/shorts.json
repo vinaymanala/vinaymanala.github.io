@@ -7,6 +7,15 @@
       "url": "/Run_A_Postgres_Docker_Container/",
       "date": "11/24/2024",
       "tags": ["tech", "backend"]
+    },
+
+    {
+      "title":
+        "Using React: useReducer + useContext hooks",
+      "file": "/Using_React_useContext _useReducer_hooks/Using_React_useContext _useReducer_hooks.md",
+      "url": "/Using_React_useContext _useReducer_hooks/",
+      "date": "11/24/2024",
+      "tags": ["tech", "frontend"]
     }
   ]
 }

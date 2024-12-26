@@ -1,4 +1,6 @@
 (() => {
+  let blogsIntervalId, shortsIntervalId;
+
   // dark theme settings
   (function () {
     const themeToggle = document.querySelector(".darkmode-toggle input");
@@ -205,25 +207,36 @@
       let blogsIterator = iterator(blogsList);
       let shortsIterator = iterator(shortsList);
 
-      // setInterval(async () => {
-      const currentBlog = blogsIterator.next();
-      if (!currentBlog.done) {
-        const blog = currentBlog.value;
-        blogsElement.innerHTML = createContent(blog);
-      } else {
-        blogsIterator = iterator(blogsList);
+      if (blogsIntervalId) {
+        clearInterval(blogsIntervalId);
       }
-      // }, 20000);
 
-      // setInterval(() => {
-      const currentShort = shortsIterator.next();
-      if (!currentShort.done) {
-        const short = currentShort.value;
-        shortsElement.innerHTML = createContent(short);
-      } else {
-        shortsIterator = iterator(shortsList);
+      let currentBlog = blogsIterator.next();
+      blogsElement.innerHTML = createContent(currentBlog.value);
+      blogsIntervalId = setInterval((currentBlog) => {
+        currentBlog = blogsIterator.next();
+        if (!currentBlog.done) {
+          const blog = currentBlog.value;
+          blogsElement.innerHTML = createContent(blog);
+        } else {
+          blogsIterator = iterator(blogsList);
+        }
+      }, 2000);
+
+      if (shortsIntervalId) {
+        clearInterval(shortsIntervalId);
       }
-      // }, 16000);
+      const currentShort = shortsIterator.next();
+      shortsElement.innerHTML = createContent(currentShort.value);
+      shortsIntervalId = setInterval((currentShort) => {
+        currentShort = shortsIterator.next();
+        if (!currentShort.done) {
+          const short = currentShort.value;
+          shortsElement.innerHTML = createContent(short);
+        } else {
+          shortsIterator = iterator(shortsList);
+        }
+      }, 1600);
     }
   })();
 })();
