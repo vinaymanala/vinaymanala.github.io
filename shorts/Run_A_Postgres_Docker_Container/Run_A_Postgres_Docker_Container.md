@@ -1,6 +1,6 @@
 # Run a postgres docker container
 
-##### Date : November 16, 2024 | [#Productivity]()
+##### Date : November 16, 2024 | [#tech, #backend]()
 
 Pull the postgres versioned or latest docker container from the docker hub registry
 

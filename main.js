@@ -30,29 +30,67 @@
 
   // fetch tags in pages
   (async function () {
-    let [Tags, Blogs, Shorts] = await Promise.all([
-      await fetch("./tags.json"),
-      await fetch("./blogs/blogs.json"),
-      await fetch("./shorts/shorts.json"),
-    ]);
-    const { tags } = await Tags.json();
-    const { blogs } = await Blogs.json();
-    const { shorts } = await Shorts.json();
-    tagsHtml = document.querySelector(".tags-view");
-    const divTag = document.createElement("div");
-    const ulTag = document.createElement("ul");
-    const fragment = document.createDocumentFragment();
-    tagsHtml.innerHTML = "";
-    tags.map(
-      (t) =>
-        (ulTag.innerHTML += `
-      <li>
-      <a href=${t.url}><h3>#${t.tag}</h3></a></li>`)
-    );
+    const tagsEl = document.querySelector(".tags-view");
+    if (tagsEl) {
+      let Tags = await fetch("./tags.json");
+      const { tags } = await Tags.json();
+      tagsHtml = document.querySelector(".tags-view");
+      const divTag = document.createElement("div");
+      const ulTag = document.createElement("ul");
+      const fragment = document.createDocumentFragment();
+      tagsHtml.innerHTML = "";
+      tags.map(
+        (t) =>
+          (ulTag.innerHTML += `
+        <li>
+        <a href=${`tags${t.url}`}><h3>#${t.tag}</h3></a></li>`)
+      );
 
-    divTag.appendChild(ulTag);
-    fragment.appendChild(divTag);
-    tagsHtml.appendChild(fragment);
+      divTag.appendChild(ulTag);
+      fragment.appendChild(divTag);
+      tagsHtml.appendChild(fragment);
+    }
+  })();
+
+  // fetch blogs and shorts filtered by tags
+  (async function () {
+    const pageTag = window.location.pathname.split("/")[2];
+    console.log(pageTag);
+    const tagArticles = document.querySelector(".tags-articles");
+    if (tagArticles) {
+      const blogs = await fetchBlogs((url = "../../blogs/blogs.json"));
+      const shorts = await fetchShorts((url = "../../shorts/shorts.json"));
+
+      let listContents = [];
+      filteredBlogsByTags = [
+        ...blogs.filter((blog) => blog.tags.includes(pageTag.toLowerCase())),
+      ];
+      filteredShortsByTags = [
+        ...shorts.filter((short) => short.tags.includes(pageTag.toLowerCase())),
+      ];
+      console.log(filteredBlogsByTags);
+      const filteredBlogs = await createContentList(
+        filteredBlogsByTags,
+        (rootFilePath = "../../blogs")
+      );
+
+      const filteredShorts = await createContentList(
+        filteredShortsByTags,
+        (rootFilePath = "../../shorts")
+      );
+
+      if (!filteredBlogs.length && !filteredShorts.length) {
+        tagArticles.innerHTML = `<div>
+            <p style="text-align: center;">No results to view</p>
+          </div>`;
+      }
+
+      for (let content of [...filteredBlogs, ...filteredShorts]) {
+        if (content) {
+          tagArticles.innerHTML += createContent(content);
+        }
+      }
+    }
   })();
 
   // blogs and shorts list creation
@@ -124,20 +162,23 @@
   // render blog  articles in blogs section
   (async function () {
     const blogArticles = document.querySelector(".blogs-articles");
-    const blogs = blogArticles && (await fetchBlogs((url = "./blogs.json")));
-    const blogsList = await createContentList(blogs, (rootFilePath = "."));
-    for (let blog of blogsList) {
-      blogArticles.innerHTML += createContent(blog);
+    if (blogArticles) {
+      const blogs = await fetchBlogs((url = "./blogs.json"));
+      const blogsList = await createContentList(blogs, (rootFilePath = "."));
+      for (let blog of blogsList) {
+        blogArticles.innerHTML += createContent(blog);
+      }
     }
   })();
   // render short articles in shorts section
   (async function () {
     const shortArticles = document.querySelector(".shorts-articles");
-    const shorts =
-      shortArticles && (await fetchShorts((url = "./shorts.json")));
-    const shortsList = await createContentList(shorts, (rootFilePath = "."));
-    for (let short of shortsList) {
-      shortArticles.innerHTML += createContent(short);
+    if (shortArticles) {
+      const shorts = await fetchShorts((url = "./shorts.json"));
+      const shortsList = await createContentList(shorts, (rootFilePath = "."));
+      for (let short of shortsList) {
+        shortArticles.innerHTML += createContent(short);
+      }
     }
   })();
 
@@ -146,47 +187,43 @@
     const blogsElement = document.querySelector(".blogs-view");
     const shortsElement = document.querySelector(".shorts-view");
 
-    const blogs =
-      blogsElement && (await fetchBlogs((url = "./blogs/blogs.json")));
-    const blogsList = await createContentList(
-      blogs,
-      (rootFilePath = "./blogs")
-    );
+    let blogsList, shortsList;
+    if (blogsElement || shortsElement) {
+      const blogs = await fetchBlogs((url = "./blogs/blogs.json"));
+      blogsList = await createContentList(blogs, (rootFilePath = "./blogs"));
 
-    const shorts =
-      shortsElement && (await fetchShorts((url = "./shorts/shorts.json")));
-    const shortsList = await createContentList(
-      shorts,
-      (rootFilePath = "./shorts")
-    );
-    // Array.from({ length: 5 }, (_, i) => i + 1);
-    function* iterator(items) {
-      for (let item of items) {
-        yield item;
+      const shorts = await fetchShorts((url = "./shorts/shorts.json"));
+      shortsList = await createContentList(shorts, (rootFilePath = "./shorts"));
+
+      // Array.from({ length: 5 }, (_, i) => i + 1);
+      function* iterator(items) {
+        for (let item of items) {
+          yield item;
+        }
       }
-    }
 
-    let blogsIterator = iterator(blogsList);
-    let shortsIterator = iterator(shortsList);
+      let blogsIterator = iterator(blogsList);
+      let shortsIterator = iterator(shortsList);
 
-    // setInterval(async () => {
-    const currentBlog = blogsIterator.next();
-    if (!currentBlog.done) {
-      const blog = currentBlog.value;
-      blogsElement.innerHTML = createContent(blog);
-    } else {
-      blogsIterator = iterator(blogsList);
-    }
-    // }, 20000);
+      // setInterval(async () => {
+      const currentBlog = blogsIterator.next();
+      if (!currentBlog.done) {
+        const blog = currentBlog.value;
+        blogsElement.innerHTML = createContent(blog);
+      } else {
+        blogsIterator = iterator(blogsList);
+      }
+      // }, 20000);
 
-    // setInterval(() => {
-    const currentShort = shortsIterator.next();
-    if (!currentShort.done) {
-      const short = currentShort.value;
-      shortsElement.innerHTML = createContent(short);
-    } else {
-      shortsIterator = iterator(shortsList);
+      // setInterval(() => {
+      const currentShort = shortsIterator.next();
+      if (!currentShort.done) {
+        const short = currentShort.value;
+        shortsElement.innerHTML = createContent(short);
+      } else {
+        shortsIterator = iterator(shortsList);
+      }
+      // }, 16000);
     }
-    // }, 16000);
   })();
 })();

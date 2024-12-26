@@ -319,14 +319,16 @@ footer {
 }
 
 .blogs-articles,
-.shorts-articles {
+.shorts-articles,
+.tags-articles {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .blogs-articles > div,
-.shorts-articles > div {
+.shorts-articles > div,
+.tags-articles > div {
   border: 1px solid var(--border);
   border-radius: 2%;
   padding: 0.7rem;
@@ -334,20 +336,24 @@ footer {
 }
 
 .blogs-articles > div > a > h3,
-.shorts-articles > div > a > h3 {
+.shorts-articles > div > a > h3,
+.tags-articles > div > a > h3 {
   font-size: 1.3em;
 }
 
 .blogs-articles > div > p,
 .blogs-articles > div > span,
 .shorts-articles > div > p,
-.shorts-articles > div > span {
+.shorts-articles > div > span,
+.tags-articles > div > p,
+.tags-articles > div > span {
   opacity: 0.8;
   margin: 1em 0.3em;
 }
 
 .blogs-articles > div > span,
-.shorts-articles > div > span {
+.shorts-articles > div > span,
+.tags-articles > div > span {
   font-size: 0.8em;
 }
 

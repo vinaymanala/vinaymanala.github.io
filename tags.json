@@ -9,12 +9,12 @@
         "url":"/tech"
         },
         {
-            "tag": "performance",
-            "url": "/performance"
+            "tag": "frontend",
+            "url": "/frontend"
         },
         {
-            "tag": "software-development",
-            "url": "/software-development"
+            "tag": "backend",
+            "url": "/backend"
         }
 
     ]

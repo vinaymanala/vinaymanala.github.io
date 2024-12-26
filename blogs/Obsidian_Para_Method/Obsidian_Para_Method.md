@@ -1,6 +1,6 @@
 # Obsidian + PARA method - The way of making a meaningful note taking system.
 
-##### Date : November 16, 2024 | [#Productivity]()
+##### Date : November 16, 2024 | [#productivity]()
 
 I was awful at managing notes of my own. Even when I wanted to look back on a specific topic in my notes, it was a hassle. My notes were unorganised and was hard to maintain.
 
