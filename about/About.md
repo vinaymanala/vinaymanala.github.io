@@ -27,6 +27,12 @@ essential in today's generation.
 
 [Youtube](https://www.youtube.com/channel/UCXs7GazVR7nHPTJGAcAm3fg)
 
+## Achievements I have recieved from my recent company:
+
+![award](../assets/awards/award-AdaptAndEvolve.jpg)
+![award](../assets/awards/award-TogetherWeAchieve.jpg)
+![award](../assets/awards/award-ClientFocused.jpg)
+
 ## Some of the videos I have created:
 
 #### [Decentralized Asset Tracking System](https://www.youtube.com/watch?v=-Dl09BGgZqM&ab_channel=ManalaMedia)
@@ -51,13 +57,13 @@ real time disaster events occuring from around the world.
 
 ## Some of the projects I have build:
 
+#### [Project Idea Document creator uing AI (Rquid)](https://rquid-client.onrender.com/)
+
+A project idea document creator using AI which creates projects within minutes.
+
 #### [Movies website (bookyMyMovies)](https://bmym.netlify.app/)
 
 A movies web application built using Reactjs library with public apis available.
-
-#### Project Idea Document creator uing AI (Rquid)[https://rquid-client.onrender.com/]
-
-A project idea document creator using AI which creates projects within minutes.
 
 #### Simple todo-tasks-manager
 
