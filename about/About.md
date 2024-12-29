@@ -3,19 +3,19 @@
 ## Hi, I'm Vinay,
 
 I currently live in the Mumbai Metropolitan Area of Maharashtra with
-my parents. I have started programming when I took electronics as my
+my parents. I had started programming when I took electronics as my
 engineering path. Since then I have been building projects and
 learning new technologies.
 
 I am a frontend developer, an aspiring full stack developer. I
-curently work for a Fintech Company, where I develop financial
+curently work for a Fintech Company, where I develop financial web
 applications for the company built with Reactjs as Frontend. I am
 currently investing my time in learning current technologies around
 web development, cloud architecture and infrastructure, design
 systems and many more. Apart from this In my free time I binge shows
 and movies with Sci-fi, Thriller, Adventure genre. I also keep in
 touch with the financial system and news as well which is very
-essential in today's generation.
+essential nowadays.
 
 ## Socials:
 
