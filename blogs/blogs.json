@@ -2,11 +2,19 @@
 "blogs" : [
     {
       "title":
-        "Obsidian + PARA method - The way of making a meaningful note taking system.",
+        "Obsidian + PARA method - The way of making a meaningful note taking system",
       "file": "/Obsidian_Para_Method/Obsidian_Para_Method.md",
       "url": "/Obsidian_Para_Method/",
       "date": "11/16/2024",
       "tags":["productivity"]
+    },
+    {
+      "title":
+        "DOMContentParser() - a savior of SSR and CMS API HTML handling in browsers",
+      "file": "/DOMContentParser/DOMContentParser.md",
+      "url": "/DOMContentParser/",
+      "date": "01/01/2025",
+      "tags":["tech", "frontend"]
     }
   ]
 }
