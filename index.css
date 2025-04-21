@@ -435,7 +435,12 @@ footer {
     border: 1px solid var(--border);
     grid-column: span 6;
     grid-row: 6;
-    position: tatic;
+    display: flex;
+    position: static;
+  }
+
+  .tags-view > div > ul {
+    display: block;
   }
 
   .about-view {
@@ -443,7 +448,13 @@ footer {
     height: fit-content;
     grid-column: span 6;
     grid-row: 1;
+    margin: 0;
+    margin-left: 0;
     padding: 1rem;
+  }
+
+  .about-description {
+    margin-left: 0;
   }
 
   #blog-buttons,
