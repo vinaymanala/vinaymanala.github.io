@@ -34,7 +34,7 @@
   (async function () {
     const tagsEl = document.querySelector(".tags-view");
     if (tagsEl) {
-      let Tags = await fetch("./tags.json");
+      let Tags = await fetch("./tags/tags.json");
       const { tags } = await Tags.json();
       tagsHtml = document.querySelector(".tags-view");
       const divTag = document.createElement("div");
