@@ -83,6 +83,31 @@
       <!-- main setion -->
       <main>
         <div class="main-section">
+          <div class="about-view">
+            <div class="about-description">
+              <h1>Vinay Manala</h1>
+              <p>
+                Software Engineer specializing in Backend for Frontend (BFE) web
+                development. Currently expanding my expertise in System Design,
+                Distributed Systems, and Micro-Frontend (MFE).
+                <br /><a href="./about/">Read more</a>
+              </p>
+              <div class="about-me">
+                <p>Connect with me:</p>
+                <div class="about-me-links">
+                  <a href="https://github.com/manalavi">Github</a>
+                  <a href="https://www.linkedin.com/in/vinaymanala/"
+                    >LinkedIn</a
+                  >
+                  <a href="https://twitter.com/vinaymanala/">Twitter</a>
+                  <a
+                    href="https://www.youtube.com/channel/UCXs7GazVR7nHPTJGAcAm3fg"
+                    >Youtube</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- Blogs view -->
           <div class="blogs-view">
             <div class="loader">
@@ -103,43 +128,9 @@
                 <circle cx="5" cy="12" r="1" />
               </svg>
             </div>
-          </div>
-          <!-- About view -->
-          <div class="about-view">
-            <img
-              class="profile about-profile"
-              src="./assets//picture_from_bhimasankar_waterfall.jpg"
-              width="145"
-              height="150"
-            />
-            <!-- About description -->
-            <div class="about-description">
-              <p>
-                "Hi, I&rsquo;m Vinay Manala. I currently work as a
-                Frontend(React) Developer. I had started programming when I took
-                electronics as my engineering path. Since then I have been
-                building projects and learning new technologies...
-                <a href="./about/">Read more</a>
-              </p>
-              <label for="about-experience">Experience:</label>
-              <div class="about-experience">
-                <p>Software Developer (+1yrs)</p>
-                <p>Frontend Developer (+3yrs)</p>
-              </div>
-              <label for="about-skills">Skills:</label>
-              <p id="about-skills" class="about-skills">
-                Javascript, Typescript, Azure, SQL
-              </p>
-              <label class="about-links-title">Find me at:</label>
-              <div class="about-me-links">
-                <a href="https://github.com/manalavi">Github</a>
-                <a href="https://www.linkedin.com/in/vinaymanala/">LinkedIn</a>
-                <a href="https://twitter.com/vinaymanala/">Twitter</a>
-                <a
-                  href="https://www.youtube.com/channel/UCXs7GazVR7nHPTJGAcAm3fg"
-                  >Youtube</a
-                >
-              </div>
+            <div id="blog-buttons">
+              <button id="prev-blog-btn">&#8612;</button>
+              <button id="next-blog-btn">&#8614;</button>
             </div>
           </div>
           <!-- Shorts view -->
@@ -161,9 +152,13 @@
                 <circle cx="19" cy="12" r="1" />
                 <circle cx="5" cy="12" r="1" />
               </svg>
+              <div id="shorts-buttons">
+                <button id="prev-short-btn">&#8612;</button>
+                <button id="next-short-btn">&#8614;</button>
+              </div>
             </div>
           </div>
-
+          <!-- Tags view -->
           <div class="tags-view">
             <div class="loader">
               <svg

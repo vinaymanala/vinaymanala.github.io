@@ -19,21 +19,22 @@ essential nowadays.
 
 ## Socials:
 
-[Github](https://github.com/manalavi)
-
-[LinkedIn](https://www.linkedin.com/in/vinaymanala/)
-
-[Twitter](https://twitter.com/vinaymanala/)
-
-[Youtube](https://www.youtube.com/channel/UCXs7GazVR7nHPTJGAcAm3fg)
+[Github](https://github.com/manalavi "Github")
+[LinkedIn](https://www.linkedin.com/in/vinaymanala/ "LinkedIn")
+[Twitter](https://twitter.com/vinaymanala/ "Twitter")
+[Youtube](https://www.youtube.com/channel/UCXs7GazVR7nHPTJGAcAm3fg "Youtube")
 
 ## Achievements I have recieved from my recent company:
 
-![award](../assets/awards/award-AdaptAndEvolve.jpg)
-![award](../assets/awards/award-TogetherWeAchieve.jpg)
-![award](../assets/awards/award-ClientFocused.jpg)
+[![award](../assets/awards/award-AdaptAndEvolve.jpg)](../assets/awards/award-AdaptAndEvolve.jpg "Award for AdaptAndEvolve")
+[![award](../assets/awards/award-TogetherWeAchieve.jpg)](../assets/awards/award-TogetherWeAchieve.jpg "Award for TogetherWeAcheive")
+[![award](../assets/awards/award-ClientFocused.jpg)](../assets/awards/award-ClientFocused.jpg "Award for ClientFocused")
 
 ## Some of the videos I have created:
+
+[![YoutubeVideo](https://i.ytimg.com/an_webp/QW0gUWYKQa0/mqdefault_6s.webp?du=3000&sqp=CKqxl8AG&rs=AOn4CLD9zD58_M_UOEBcLgjIQg07UprxLw)](https://youtu.be/QW0gUWYKQa0 "Bug Tracking System Youtube Video")
+[![YoutubeVideo](https://i.ytimg.com/an_webp/BmBP9zd84zI/mqdefault_6s.webp?du=3000&sqp=CIqpl8AG&rs=AOn4CLCPSNpkUdgM_wkFGV1hXirDffR2Lg)](https://youtu.be/BmBP9zd84zI "ReactJS Stripe Payment Gateway Youtube Video")
+[![YoutubeVideo](https://i.ytimg.com/an_webp/-Dl09BGgZqM/mqdefault_6s.webp?du=3000&sqp=CODMl8AG&rs=AOn4CLCeb1R4cK39E5brpCbCLIsqK76qZA)](https://youtu.be/-Dl09BGgZqM "Decentralized Asset Tracking System Using Blockchain Technology Youtube Video")
 
 #### [Decentralized Asset Tracking System](https://www.youtube.com/watch?v=-Dl09BGgZqM&ab_channel=ManalaMedia)
 
@@ -57,6 +58,14 @@ real time disaster events occuring from around the world.
 
 ## Some of the projects I have build:
 
+[![site](../assets/sites/rcoinsSite.png)](../assets/sites/rcoinsSite.png "Rcoins Website")
+[![site](../assets/sites/bmymsite.png)](../assets/sites/bmymsite.png "Bookmymovies Website")
+[![site](../assets/sites/rquidSite.png)](../assets/sites/rquidSite.png "Rquid Website")
+
+#### [Cryptocurrency Dashboard (Rcoins)](https://rcoins.vercel.app/)
+
+Displays the top trending and latest data for cryptocurencies.
+
 #### [Project Idea Document creator uing AI (Rquid)](https://rquid-client.onrender.com/)
 
 A project idea document creator using AI which creates projects within minutes.
@@ -65,6 +74,6 @@ A project idea document creator using AI which creates projects within minutes.
 
 A movies web application built using Reactjs library with public apis available.
 
-#### Simple todo-tasks-manager
+#### [Simple todo-tasks-manager](https://todotasksmanager.netlify.app/)
 
 A simple todo-tasks-manager build using vanilla javascript, html, css.

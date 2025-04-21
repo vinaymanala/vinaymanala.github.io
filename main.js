@@ -56,21 +56,19 @@
 
   // fetch blogs and shorts filtered by tags
   (async function () {
-    const pageTag = window.location.pathname.split("/")[2];
+    const pageTag = window.location.pathname.split("/")[3];
     console.log(pageTag);
     const tagArticles = document.querySelector(".tags-articles");
     if (tagArticles) {
       const blogs = await fetchBlogs((url = "../../blogs/blogs.json"));
       const shorts = await fetchShorts((url = "../../shorts/shorts.json"));
 
-      let listContents = [];
       filteredBlogsByTags = [
         ...blogs.filter((blog) => blog.tags.includes(pageTag.toLowerCase())),
       ];
       filteredShortsByTags = [
         ...shorts.filter((short) => short.tags.includes(pageTag.toLowerCase())),
       ];
-      console.log(filteredBlogsByTags);
       const filteredBlogs = await createContentList(
         filteredBlogsByTags,
         (rootFilePath = "../../blogs")
@@ -102,7 +100,7 @@
       const res = await fetch(rootFilePath + a.file);
       const text = (await res.text()).split("\n");
       const description =
-        text.slice(1, 2).join("\n") + text.slice(3, 7).join("\n");
+        text.slice(1, 2).join("\n") + text.slice(3, 6).join("\n");
       const articlesList = { ...a, url: rootFilePath + a.url, description };
       list.push(articlesList);
     }
@@ -197,46 +195,118 @@
       const shorts = await fetchShorts((url = "./shorts/shorts.json"));
       shortsList = await createContentList(shorts, (rootFilePath = "./shorts"));
 
+      let currentBlogIndex = 0;
+      let currentShortIndex = 0;
       // Array.from({ length: 5 }, (_, i) => i + 1);
-      function* iterator(items) {
-        for (let item of items) {
-          yield item;
+      function* blogsIteratorFn(items) {
+        // for (let item of items) {
+        //   yield item;
+        // }
+        while (true) {
+          yield items[currentBlogIndex];
         }
       }
 
-      let blogsIterator = iterator(blogsList);
-      let shortsIterator = iterator(shortsList);
-
-      if (blogsIntervalId) {
-        clearInterval(blogsIntervalId);
+      function* shortsIteratorFn(items) {
+        // for (let item of items) {
+        //   yield item;
+        // }
+        while (true) {
+          yield items[currentShortIndex];
+        }
       }
+
+      // let blogsIterator = iterator(blogsList);
+      // let shortsIterator = shortsIteratorFn(shortsList);
+
+      // if (blogsIntervalId) {
+      //   clearInterval(blogsIntervalId);
+      // }
 
       // let currentBlog = blogsIterator.next();
       // blogsElement.innerHTML = createContent(currentBlog.value);
-      blogsIntervalId = setInterval(() => {
+      // blogsIntervalId = setInterval(() => {
+      // const currentBlog = blogsIterator.next();
+      // if (!currentBlog.done) {
+      //   const blog = currentBlog.value;
+      //   const buttons = document.getElementById("blog-buttons");
+      //   blogsElement.innerHTML = createContent(blog);
+      //   blogsElement.appendChild(buttons);
+      // } else {
+      //   blogsIterator = iterator(blogsList);
+      // }
+      // }, 2000);
+
+      // if (shortsIntervalId) {
+      //   clearInterval(shortsIntervalId);
+      // }
+      // const currentShort = shortsIterator.next();
+      // shortsElement.innerHTML = await createContent(currentShort.value);
+      // shortsIntervalId = setInterval(() => {
+      // const currentShort = shortsIterator.next();
+      // if (!currentShort.done) {
+      //   const short = currentShort.value;
+      //   shortsElement.innerHTML = createContent(short);
+      // } else {
+      //   shortsIterator = shortsIteratorFn(shortsList);
+      // }
+      // }, 1600);
+
+      function updateBlogContent() {
+        let blogsIterator = blogsIteratorFn(blogsList);
+
         const currentBlog = blogsIterator.next();
         if (!currentBlog.done) {
           const blog = currentBlog.value;
+          const buttons = document.getElementById("blog-buttons");
+          blogsElement.removeChild(buttons);
           blogsElement.innerHTML = createContent(blog);
+          blogsElement.appendChild(buttons);
         } else {
-          blogsIterator = iterator(blogsList);
+          blogsIterator = blogsIteratorFn(blogsList);
         }
-      }, 2000);
-
-      if (shortsIntervalId) {
-        clearInterval(shortsIntervalId);
       }
-      // const currentShort = shortsIterator.next();
-      // shortsElement.innerHTML = await createContent(currentShort.value);
-      shortsIntervalId = setInterval(() => {
+
+      function updateShortsContent() {
+        let shortsIterator = shortsIteratorFn(shortsList);
         const currentShort = shortsIterator.next();
         if (!currentShort.done) {
           const short = currentShort.value;
+          const buttons = document.getElementById("shorts-buttons");
+          // shortsElement.removeChild(buttons);
           shortsElement.innerHTML = createContent(short);
+          shortsElement.appendChild(buttons);
         } else {
-          shortsIterator = iterator(shortsList);
+          shortsIterator = shortsIteratorFn(shortsList);
         }
-      }, 1600);
+      }
+
+      document.getElementById("prev-blog-btn").addEventListener("click", () => {
+        currentBlogIndex = (currentBlogIndex - 1 + blogs.length) % blogs.length;
+        updateBlogContent();
+      });
+
+      document.getElementById("next-blog-btn").addEventListener("click", () => {
+        currentBlogIndex = (currentBlogIndex + 1) % blogs.length;
+        updateBlogContent();
+      });
+
+      document
+        .getElementById("prev-short-btn")
+        .addEventListener("click", () => {
+          currentShortIndex =
+            (currentShortIndex - 1 + shorts.length) % shorts.length;
+          updateShortsContent();
+        });
+
+      document
+        .getElementById("next-short-btn")
+        .addEventListener("click", () => {
+          currentShortIndex = (currentShortIndex + 1) % shorts.length;
+          updateShortsContent();
+        });
+      updateBlogContent();
+      updateShortsContent();
     }
   })();
 })();
