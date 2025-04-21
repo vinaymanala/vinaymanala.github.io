@@ -56,7 +56,7 @@
 
   // fetch blogs and shorts filtered by tags
   (async function () {
-    const pageTag = window.location.pathname.split("/")[3];
+    const pageTag = window.location.pathname.split("/")[2];
     console.log(pageTag);
     const tagArticles = document.querySelector(".tags-articles");
     if (tagArticles) {
