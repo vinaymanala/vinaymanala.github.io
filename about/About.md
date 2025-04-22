@@ -32,9 +32,16 @@ essential nowadays.
 
 ## Some of the videos I have created:
 
-[![YoutubeVideo](https://i.ytimg.com/an_webp/QW0gUWYKQa0/mqdefault_6s.webp?du=3000&sqp=CKqxl8AG&rs=AOn4CLD9zD58_M_UOEBcLgjIQg07UprxLw)](https://youtu.be/QW0gUWYKQa0 "Bug Tracking System Youtube Video")
+<iframe width="560" height="315" alt="YoutubeVideo" src="https://www.youtube.com/embed/VyjnPbV8iZo?si=pE1_KsQqJ9s_Sk0Y" title="Disaster Delineation Project Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" alt="YoutubeVideo" src="https://www.youtube.com/embed/QW0gUWYKQa0?si=N5HlxeGVzGk535tL" title="Bug Tracking System Youtube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" alt="YoutubeVideo" src="https://www.youtube.com/embed/BmBP9zd84zI?si=wdKqQHiHd2E5lsFv" title="ReactJS Stripe Payment Gateway Youtube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" alt="YoutubeVideo" src="https://www.youtube.com/embed/-Dl09BGgZqM?si=sVaTR0i9vJ5j_CoL" title="Decentralized Asset Tracking System Using Blockchain Technology Youtube Video Part - 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" alt="YoutubeVideo" src="https://www.youtube.com/embed/M1FLukYPGvI?si=R3DT7nRTVS-kLmWw" title="Decentralized Asset Tracking System Using Blockchain Technology Youtube Video Part - 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" alt="YoutubeVideo" src="https://www.youtube.com/embed/4U-swGnxnKs?si=s3MVyJtMx757DbCe" title="iRotot Simulation Youtube Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<!-- [![YoutubeVideo](https://i.ytimg.com/an_webp/QW0gUWYKQa0/mqdefault_6s.webp?du=3000&sqp=CKqxl8AG&rs=AOn4CLD9zD58_M_UOEBcLgjIQg07UprxLw)](https://youtu.be/QW0gUWYKQa0 "Bug Tracking System Youtube Video")
 [![YoutubeVideo](https://i.ytimg.com/an_webp/BmBP9zd84zI/mqdefault_6s.webp?du=3000&sqp=CIqpl8AG&rs=AOn4CLCPSNpkUdgM_wkFGV1hXirDffR2Lg)](https://youtu.be/BmBP9zd84zI "ReactJS Stripe Payment Gateway Youtube Video")
-[![YoutubeVideo](https://i.ytimg.com/an_webp/-Dl09BGgZqM/mqdefault_6s.webp?du=3000&sqp=CODMl8AG&rs=AOn4CLCeb1R4cK39E5brpCbCLIsqK76qZA)](https://youtu.be/-Dl09BGgZqM "Decentralized Asset Tracking System Using Blockchain Technology Youtube Video")
+[![YoutubeVideo](https://i.ytimg.com/an_webp/-Dl09BGgZqM/mqdefault_6s.webp?du=3000&sqp=CODMl8AG&rs=AOn4CLCeb1R4cK39E5brpCbCLIsqK76qZA)](https://youtu.be/-Dl09BGgZqM "Decentralized Asset Tracking System Using Blockchain Technology Youtube Video") -->
 
 #### [Decentralized Asset Tracking System](https://www.youtube.com/watch?v=-Dl09BGgZqM&ab_channel=ManalaMedia)
 
