@@ -2,6 +2,8 @@
 
 ## Hi, I'm Vinay,
 
+<i>Software Engineer specializing in Backend for Frontend (BFE) web development. Currently expanding my expertise in System Design, Distributed Systems, and Micro-Frontend (MFE).</i>
+
 I currently live in the Mumbai Metropolitan Area of Maharashtra with
 my parents. I had started programming when I took electronics as my
 engineering path. Since then I have been building projects and
