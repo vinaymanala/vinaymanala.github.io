@@ -21,7 +21,7 @@ essential nowadays.
 
 ## Socials:
 
-[Github](https://github.com/manalavi "Github")
+[Github](https://github.com/vinaymanala "Github")
 [LinkedIn](https://www.linkedin.com/in/vinaymanala/ "LinkedIn")
 [Twitter](https://twitter.com/vinaymanala/ "Twitter")
 [Youtube](https://www.youtube.com/channel/UCXs7GazVR7nHPTJGAcAm3fg "Youtube")

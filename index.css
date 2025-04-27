@@ -463,6 +463,7 @@ footer {
     bottom: 1;
     right: 0.8em;
     display: flex;
+    align-items: center;
     gap: 2em;
   }
 
